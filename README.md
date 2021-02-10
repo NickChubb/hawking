@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Hawking, the SFU Science Discord Bot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A multi-purpose Discord bot.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+1) **Event Database Manager**
 
-### `yarn start`
+    Manages an event calendar channel, which users can add/remove events from with a text command.  The bot automatically removes past events and sends announcements to an announcement channel right before an event is happening.
+    
+    <img src="https://i.imgur.com/sKA15fC.png" alt="Event Calendar" width="500"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2) **24/7 Music Player**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    Streams audio from youtube into an audio channel 24/7 with no downtime.  
 
-### `yarn test`
+3) **Randomized Draws**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Draw events can be initiated to select a winner at random for giveaways.
 
-### `yarn build`
+5) **Gifs!**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Hawking responds with a randomized gif based on a search query!  Uses the [GIPHY](https://giphy.com/) SDK to search and return gifs.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4) **More**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    More features are being added as they are needed!
+   
+## Documentation
 
-### `yarn eject`
+To enable Hawking, you will need to rename the config.json.sample to config.json and edit it.  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+modRoles are the roles that are permitted to use commands.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+drawExcludedRoles are roles that are excluded from winning draws.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Commands
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **+add** "<title>" "\<description\>" "\<location\>" <date (YYYY-MM-DD)> <start_time> <end_time> <URL>
+    
+    Adds a new event to the Event Calendar Database.  Title, Description, and Location must have quotation marks around the arguments if they are more than one word long.  Location may refer to a text on the current Discord channel and will create a link to it as long as it doesn't have quotation marks around it.
+    
+    start_time and end_time should be formatted in 12 hour standard such as XX:XXpm or XX:XXam, with no space between the numbers and the period (am/pm).  
+    
+    There should be no quotation marks around date, times, or the URL.  
+    
+- **+del** <event_id>
 
-## Learn More
+    Deletes event with specified id from event calendar database.
+    
+- **+events**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Display a list of all events in the database with their ID.
+    
+- **+music** <start/stop>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Start or stop the music.  Generally not necessary to use but is here in case something goes wrong or music must be stopped for some reason.
+    
+- **+draw**
 
-### Code Splitting
+    Selects one user to win a draw.  Selected at random from the same voice channel as the user calling the command.  Roles can be excluded from draws by adding them to the drawExcludedRoles list in the config.json file.  After a user wins, they cannot be drawn again.
+    
+- **+draw reset**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    Reset the current draw winners.  Use this command to initialize a new raffle.
+    
+- **+gif** < query >
 
-### Analyzing the Bundle Size
+    Responds with a randomized gif based on the search query.  Queries can be multiple words long and should not be wrapped in quotation marks.
+    
+- **+help**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Responds with a link to the GUI.    
 
-### Making a Progressive Web App
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Docker
 
-### Advanced Configuration
+Currently, the preferred method of deployment is with Docker.  The included script `./docker.sh` will remove the current container (if it exists) and run a new one.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The UI interface is available at http://localhost:3001 once the container is running.  It is suggested to port forward this using either Nginx or Express if you already have another Node server on the same machine.
 
-### Deployment
+### config.json
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Hawking requires a few channels for all the features to work properly, and these must be configured in a config.json file.  There is a provided config.json.sample to refer to.  
 
-### `yarn build` fails to minify
+- The Events Calendar should be a channel that only the bot has permissions to post in, since it will delete every message in the channel which it points to when it has to refresh the calendar.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The announcements channel can be any channel where you would like announcements to be made.  
+
+- The mod commands channel is a channel which is not used at this time, but I am leaving it for the time being if I need it again. 
+
+- The music channel is any voice channel in which Hawking will join and play music on repeat.  
+
+- isMusicOn is a boolean value which indicates whether Hawking should join a voice channel and play music.
+
+- modRoles are a list of roles which can use moderator commands, such as adding events, running raffles, or anything to do with music.
+
+- drawExcludedRoles are a list of roles which will not be selected to win in a raffle.  
+    
+## About
+
+Created for the SFU Science Undergraduate Society Discord server by Nick Chubb.

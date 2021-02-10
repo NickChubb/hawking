@@ -5,9 +5,110 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: lightskyblue;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.footer {
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #313131;
+  color: steelblue;
+  background:  url('./img/grainy_background.png'), rgb(60, 60, 60);
+}
+
+.header {
+  padding: 30px;
+}
+
+.btn {
+  box-shadow: 1px 1px 2px rgb(0, 154, 206);
+}
+
+.button-container > * {
+  margin: 2px;
+}
+
+.documentation-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 150px;
+}
+
+.documentation-text {
+  max-width: 50%;
+  text-align: left;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  background:  url('./img/grainy_background.png'), rgb(60, 60, 60);
+  border: 1px solid #313131;
+  border-radius: 4px;
+  padding: 25px;
+  padding-bottom: 40px;
+  color: lightgray;
+  margin-bottom: 150px;
+}
+
+.form > * {
+  width: 100%;
+}
+
+.element {
+  width: 400px;
+  min-height: 525px;
+  background:  url('./img/grainy_background.png'), rgb(60, 60, 60);
+  border: 1px solid #313131;
+  border-radius: 4px;
+  padding: 5px;
+  color: lightgray;
+}
+
+.element h3 { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.element h2 { 
+  padding-top: 10px;
+}
+
+.display {
+  padding: 10px;
+  padding-bottom: 150px;
+}
+
+.container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event {
+  padding: 10px;
+  margin: 5px;
+  background: rgb(160, 160, 160);
+  border-radius: 3px;
+}
+
+.setting-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.setting-input {
+
 }
