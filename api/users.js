@@ -1,6 +1,6 @@
 // const express = require('express');
 import express from 'express';
-import Database from './database.js';
+import Database from '../lib/database.js';
 
 const router = express.Router();
 const db = new Database();

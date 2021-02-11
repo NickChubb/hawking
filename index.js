@@ -2,7 +2,7 @@
 
 // index.ts
 
-import Database from './database.js';
+import Database from './lib/database.js';
 import Discord from 'discord.js';
 import moment from 'moment';
 import ytdl from 'ytdl-core';
@@ -14,7 +14,7 @@ import fetch from 'node-fetch';
 import { createRequire } from "module";
 
 // Router Import
-import api from "./api.js";
+import api from "./api/api.js";
 
 const require = createRequire(import.meta.url);
 const {  prefix,

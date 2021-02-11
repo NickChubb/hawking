@@ -3,7 +3,7 @@ import express from 'express';
 import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
-const { password } =  require('./config.json');
+const { password } =  require('../config.json');
 const router = express.Router();
 
 /**
