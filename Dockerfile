@@ -16,4 +16,4 @@ RUN yarn install
 COPY . .
 
 RUN yarn build
-CMD ["yarn", "start"]
+CMD ["node", "--experimental-json-modules", "index.js"]
