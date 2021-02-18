@@ -613,14 +613,15 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'build')));
 app.use("/api", api);
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
 app.post('/bot/updateCalendar', (req,res) => {
     updateCalendar();
     res.sendStatus(200);
 })
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 
 /**
  * Server Activation
