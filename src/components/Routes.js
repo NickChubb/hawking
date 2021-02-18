@@ -23,19 +23,19 @@ const Routes = () => {
     return (
     <Switch>
 
-        <Route path="/newEvent">
+        <Route path="/./newEvent">
           <AddEventPage />
         </Route>
 
-        <Route path="/documentation">
+        <Route path="/./documentation">
           <DocumentationPage />
         </Route>
 
-        <Route path="/settings">
+        <Route path="/./settings">
           <SettingsPage />
         </Route>
 
-        <Route path="/">
+        <Route path="/./">
           <MainPage />
         </Route>
 
