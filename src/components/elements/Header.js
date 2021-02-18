@@ -11,7 +11,7 @@ const Header = () => {
                     <Link to="./">
                         <Button color="dodgerblue" text="🤖 Dashboard" />
                     </Link>
-                    <Link to="./newevent">
+                    <Link to="./newEvent">
                         <Button color="dodgerblue" text="🎉 Add event to Event Calendar" />
                     </Link>
                     <Link to="./documentation">
