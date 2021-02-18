@@ -35,7 +35,7 @@ const Routes = () => {
           <SettingsPage />
         </Route>
 
-        <Route path="/./">
+        <Route path="/">
           <MainPage />
         </Route>
 
