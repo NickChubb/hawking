@@ -10,9 +10,15 @@ const Event = ({ event, onDelete }) => {
             <p>{event.description}</p>
             <br />
             <div>
-                {event.location}
-                {event.date}
-                {event.startTime} - {event.endTime}
+                <h4>
+                    <b>Location:</b> {event.location}
+                </h4>
+                <h4>
+                    <b>Date:</b> {event.date}
+                    <div>
+                        <b>{event.startTime} - {event.endTime}</b>
+                    </div>
+                </h4>
             </div>
         </div>
     )
