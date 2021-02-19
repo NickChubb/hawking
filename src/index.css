@@ -50,7 +50,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 70%;
   background:  url('./img/grainy_background.png'), rgb(60, 60, 60);
   border: 1px solid #313131;
   border-radius: 4px;
@@ -65,7 +65,7 @@ code {
 }
 
 .element {
-  width: 400px;
+  width: 70%;
   min-height: 525px;
   background:  url('./img/grainy_background.png'), rgb(60, 60, 60);
   border: 1px solid #313131;
