@@ -81,7 +81,7 @@ code {
 }
 
 .element h3 > * {
-  padding: 3px;
+  margin: 3px;
 }
 
 .element h4 { 

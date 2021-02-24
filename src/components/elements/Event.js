@@ -14,7 +14,7 @@ const Event = ({ event, onDelete }) => {
                     <b>Location:</b> {event.location}
                 </h4>
                 <h4>
-                    <b>Date:</b> {event.date}
+                    <b>Date: {event.date}</b>
                     <div>
                         <b>{event.startTime} - {event.endTime}</b>
                     </div>

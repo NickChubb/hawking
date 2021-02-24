@@ -1,4 +1,4 @@
 docker stop hawking
 docker rm hawking
 docker build -t nchubb/hawking .
-docker run --restart unless-stopped --name hawking -p 3001:3001 -v db:/usr/src/app/data -d nchubb/science-bot
+docker run --restart unless-stopped --name hawking -p 3001:8080 -v db:/usr/src/app/data -d nchubb/science-bot
