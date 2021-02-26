@@ -23,7 +23,7 @@ const Routes = () => {
     return (
     <Switch>
 
-        <Route path="/newEvent">
+        <Route path="/event">
           <AddEventPage />
         </Route>
 
