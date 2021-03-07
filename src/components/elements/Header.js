@@ -18,7 +18,7 @@ const Header = () => {
                     <Link to="/documentation">
                         <Button color="dodgerblue" text="📜 Documentation" />
                     </Link>
-                    <a href="https://github.com/NickChubb/science-bot">
+                    <a href="https://github.com/NickChubb/hawking">
                         <Button color="dodgerblue" text="🐙 GitHub" />
                     </a>
                     <Link to="/settings">
