@@ -1,3 +1,4 @@
+ln -s config.json src/res/config.json
 docker stop hawking
 docker rm hawking
 docker build -t nchubb/hawking .
