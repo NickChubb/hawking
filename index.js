@@ -193,7 +193,7 @@ client.on('message', async message => {
 
                 raffleWinners = [];
                 const voiceChannel = message.member.voice.channel;
-                message.channel.send(`A new raffle is starting!  🎉  Join ${voiceChannel.name} for a chance to win!!`);
+                message.channel.send(`A new raffle is starting!  🎉  Join ${voiceChannel?.name} for a chance to win!!`);
 
             } else {
 
@@ -613,7 +613,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'build')));
 app.use("/api", api);
 
-app.get('/*', function (req, res) {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
