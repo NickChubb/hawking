@@ -34,7 +34,9 @@ const __dirname = path.resolve();
 
 global.Headers = fetch.Headers;
 global.Request = fetch.Request;
-const client = new Discord.Client();
+const client = new Discord.Client({
+    intents: Discord.Intents.ALL
+});
 var time = moment();
 var connection;
 
