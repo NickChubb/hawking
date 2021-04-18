@@ -361,7 +361,7 @@ function updateCalendar() {
     // Generate calendar image
     // eventsChannel.send("", {files: ["https://nickchubb.ca/sus/sus_event_calendar.png"]});
     const headerEmbed = new Discord.MessageEmbed()
-                                    .setImage('https://nickchubb.ca/sus/sus_event_calendar.png');
+                                    .setImage('https://i.imgur.com/Sdzw0ff.png');
     eventsChannel.send(headerEmbed);
 
     // Create new calendar of messages
