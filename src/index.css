@@ -66,11 +66,11 @@ code {
 
 .element {
   width: 75%;
-  min-height: 525px;
   background:  url('./img/grainy_background.png'), rgb(60, 60, 60);
   border: 1px solid #313131;
   border-radius: 4px;
   padding: 5px;
+  margin: 4px;
   color: lightgray;
 }
 
@@ -94,6 +94,14 @@ code {
   padding-top: 10px;
 }
 
+.music {
+  min-height: 250px;
+}
+
+.calendar {
+  min-height: 525px;
+}
+
 .display {
   padding: 10px;
   padding-bottom: 150px;
@@ -102,7 +110,7 @@ code {
 .container {
   width: 50%;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 

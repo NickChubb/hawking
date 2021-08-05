@@ -23,7 +23,7 @@ const EventCalendar = () => {
     }
 
     return (
-        <div className="element">
+        <div className="element calendar">
             <h2>Event Calendar</h2>
             <hr />
             {events.length > 0 ? <Events events={events} onDelete={onDelete}/> 
