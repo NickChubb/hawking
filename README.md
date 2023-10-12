@@ -2,6 +2,8 @@
 
 A multi-purpose Discord bot.
 
+**Tech Stack: React.js, Express.js, Node.js, SQLite**
+
 ## Features
 
 1) **Event Database Manager**
