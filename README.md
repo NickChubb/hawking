@@ -2,7 +2,7 @@
 
 A multi-purpose Discord bot.
 
-**Tech Stack: React.js, Express.js, Node.js, SQLite**
+**🛠️ Tech Stack: JavaScript, React.js, Express.js, Node.js, SQLite**
 
 ## Features
 
